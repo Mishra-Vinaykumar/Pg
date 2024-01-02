@@ -67,7 +67,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="add_rooms.php">Room Details</a>
+                                <a class="nav-link" href="details_rooms.php">Room Details</a>
                                 <a class="nav-link" href="hostel_mess_menu.php">Hostel mess Menu</a>
                             </nav>
                         </div>

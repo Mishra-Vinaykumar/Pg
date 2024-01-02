@@ -159,7 +159,7 @@ if (mysqli_num_rows($result) > 0) {
       <th scope="col">Mess</th>
       <th scope="col">Food Items</th>
       <th scope="col">Status</th>
-      <th scope="col">Action</th>
+      <th scope="col" colspan='2'>Action</th>
     </tr>
   </thead>
 
@@ -173,7 +173,8 @@ if (mysqli_num_rows($result) > 0) {
       <td><?php echo $row['meal']     ?></td>
       <td><?php echo $row['fooditems'] ?></td>
       <td><?php echo $row['status']   ?></td>
-      <td><a class="btn btn-danger" href="delete.php" role="button">Delete items</a></td>  
+      <td><a class="btn btn-outline-warning" href="hostel_mess_menu.php?id=<?php echo $row['id']; ?>" role="button">Edit</a></td>  
+      <td><a class="btn btn-outline-danger" href="delete_hostel_mess_menu.php?id=<?php echo $row['id']; ?>" role="button">Delete</a></td>  
     </tr>
     <?php } ?>
   </tbody>
@@ -206,3 +207,24 @@ if (mysqli_num_rows($result) > 0) {
 </body>
 
 </html>
+
+<?php
+// Delete code php
+
+$edt_mess_id = $_GET['id'];
+
+$delete_query = "DELETE FROM mess WHERE id = $edt_mess_id";
+
+$edt_result = mysqli_query($conn,$delete_query) or die("Query faild");
+
+if ($edt_result) {
+    echo "<script> alert('Delete Successfull') </script>";
+    header("Location: add_mess_menu.php");
+    // header("Location: add_rooms.php");
+}else {
+    echo "Not Working";
+}
+
+?>
+
+

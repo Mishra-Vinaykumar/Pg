@@ -17,7 +17,7 @@ if (isset($_POST['Submit'])) {
 
    if ($result) {
       echo "<script> alert('Data inserted sucseesfully') </script>";
-      header("Location: add_rooms.php");
+      header("Location: details_rooms.php");
    }else {
       echo "<script> alert('Not Insert or Failed') </script>";
       // header("Location:");
